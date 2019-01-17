@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1D96EABD-3D0C-499E-9531-EF2BD46F1600}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ViewModel</RootNamespace>
+    <AssemblyName>ViewModel</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'quick-debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\quick-debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Customers\AddressViewModel.cs" />
+    <Compile Include="Customers\CustomerFeedbackViewModel.cs" />
+    <Compile Include="Customers\CustomerProductViewModel.cs" />
+    <Compile Include="Employees\EmployeeInfoViewModel.cs" />
+    <Compile Include="Message\HookDetailViewModel.cs" />
+    <Compile Include="Message\SmsHistoryViewModel.cs" />
+    <Compile Include="Message\SmsHookViewModel.cs" />
+    <Compile Include="Message\SmsViewModel.cs" />
+    <Compile Include="Operation\OperationLogDetailViewModel.cs" />
+    <Compile Include="Operation\OperationLogViewModel.cs" />
+    <Compile Include="Products\DealerProductViewModel.cs" />
+    <Compile Include="Products\SupplierProductViewModel.cs" />
+    <Compile Include="Reports\BaseReportViewModel.cs" />
+    <Compile Include="Reports\ProductReportViewModel.cs" />
+    <Compile Include="Reports\AccountReportViewModel.cs" />
+    <Compile Include="Sales\IBaseReportViewModel.cs" />
+    <Compile Include="Reports\SaleReportViewModel.cs" />
+    <Compile Include="Sales\InstallmentDetailViewModel.cs" />
+    <Compile Include="Sales\InstallmentViewModel.cs" />
+    <Compile Include="Sales\SalesDuesUpdateModel.cs" />
+    <Compile Include="ShopChildViewModel.cs" />
+    <Compile Include="Shops\CourierViewModel.cs" />
+    <Compile Include="Shops\DealerViewModel.cs" />
+    <Compile Include="Transactions\AccountHeadReportModel.cs" />
+    <Compile Include="Transactions\AccountHeadViewModel.cs" />
+    <Compile Include="Transactions\AccountInfoViewModel.cs" />
+    <Compile Include="Transactions\TransactionReportModel.cs" />
+    <Compile Include="Customers\CustomerReportModel.cs" />
+    <Compile Include="Customers\CustomerViewModel.cs" />
+    <Compile Include="Transactions\TransactionViewModel.cs" />
+    <Compile Include="Employees\EmployeeReportModel.cs" />
+    <Compile Include="History\HistoryViewModel.cs" />
+    <Compile Include="Products\ProductCategoryReportModel.cs" />
+    <Compile Include="Products\ProductDetailReportModel.cs" />
+    <Compile Include="Products\ProductDetailViewModel.cs" />
+    <Compile Include="Products\ProductGroupReportModel.cs" />
+    <Compile Include="Products\ProductGroupViewModel.cs" />
+    <Compile Include="Products\ProductCategoryViewModel.cs" />
+    <Compile Include="Purchases\PurchaseDetailViewModel.cs" />
+    <Compile Include="Purchases\PurchaseReportModel.cs" />
+    <Compile Include="Purchases\PurchaseViewModel.cs" />
+    <Compile Include="Sales\SaleDetailViewModel.cs" />
+    <Compile Include="Sales\SaleViewModel.cs" />
+    <Compile Include="Shops\BrandReportModel.cs" />
+    <Compile Include="Shops\BrandViewModel.cs" />
+    <Compile Include="Shops\ShopSuperAdminViewModel.cs" />
+    <Compile Include="Shops\SupplierReportModel.cs" />
+    <Compile Include="Shops\SupplierViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Warehouses\DamageViewModel.cs" />
+    <Compile Include="Warehouses\StockTransferDetailViewModel.cs" />
+    <Compile Include="Warehouses\StockTransferViewModel.cs" />
+    <Compile Include="Warehouses\WarehouseHistoryViewModel.cs" />
+    <Compile Include="Warehouses\WarehouseProductHistoryViewModel.cs" />
+    <Compile Include="Warehouses\WarehouseViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
+      <Project>{c369a485-80df-4d39-873b-5c3236fcb81a}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{1FFB3CF0-056D-47E0-8335-F46DC10742E5}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReportModel\ReportModel.csproj">
+      <Project>{304befb7-be73-453d-aa3f-0893d616be54}</Project>
+      <Name>ReportModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Settings\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
