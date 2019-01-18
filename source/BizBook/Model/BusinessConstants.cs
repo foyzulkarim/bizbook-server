@@ -78,7 +78,7 @@ namespace Model
     }
 
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum AccountInfoType
+    public enum WalletType
     {
         Cash,
         Bank,

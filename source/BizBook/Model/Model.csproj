@@ -141,7 +141,7 @@
     <Compile Include="Sales\Shipping.cs" />
     <Compile Include="ShopChild.cs" />
     <Compile Include="Shops\Brand.cs" />
-    <Compile Include="Transactions\AccountInfo.cs" />
+    <Compile Include="Transactions\Wallet.cs" />
     <Compile Include="Transactions\Transaction.cs" />
     <Compile Include="Products\ProductCategory.cs" />
     <Compile Include="Products\ProductGroup.cs" />

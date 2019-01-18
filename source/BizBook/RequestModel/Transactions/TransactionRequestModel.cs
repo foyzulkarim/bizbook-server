@@ -10,7 +10,7 @@
     {
         public string AccountHeadId { get; set; }
 
-        public string AccountInfoId { get; set; }
+        public string WalletId { get; set; }
         public string TransactionMediumName { get; set; }
     
 
@@ -34,9 +34,9 @@
                 ExpressionObj = ExpressionObj.And(x => x.AccountHeadId == AccountHeadId);
             }
 
-            if (!string.IsNullOrWhiteSpace(AccountInfoId))
+            if (!string.IsNullOrWhiteSpace(WalletId))
             {
-                this.ExpressionObj = this.ExpressionObj.And(x => x.AccountInfoId == AccountInfoId);
+                this.ExpressionObj = this.ExpressionObj.And(x => x.WalletId == WalletId);
             }
 
             if (!string.IsNullOrWhiteSpace(ParentId))

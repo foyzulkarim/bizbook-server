@@ -128,7 +128,7 @@
     <Compile Include="Shops\DealerRequestModel.cs" />
     <Compile Include="Transactions\AccountHeadRequestModel.cs" />
     <Compile Include="Customers\CustomerRequestModel.cs" />
-    <Compile Include="Transactions\AccountInfoRequestModel.cs" />
+    <Compile Include="Transactions\WalletRequestModel.cs" />
     <Compile Include="Transactions\TransactionRequestModel.cs" />
     <Compile Include="Products\ProductSerialRequestModel.cs" />
     <Compile Include="Products\ProductDetailRequestModel.cs" />

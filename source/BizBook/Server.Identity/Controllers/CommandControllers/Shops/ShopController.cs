@@ -150,7 +150,7 @@ namespace Server.Identity.Controllers.CommandControllers.Shops
             var db = Request.GetOwinContext().Get<BusinessDbContext>();
             var shopId = model.Id;
             BusinessSeedData.AddAccountHeads(db, shopId);
-            BusinessSeedData.AddAccountInfo(db,shopId);
+            BusinessSeedData.AddWallet(db,shopId);
         }
 
         private void AddBrand(M model)

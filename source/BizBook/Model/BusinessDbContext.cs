@@ -84,7 +84,7 @@ namespace Model
 
         public DbSet<AccountHead> AccountHeads { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<AccountInfo> AccountInfos { get; set; }
+        public DbSet<Wallet> Wallets { get; set; }
 
         #endregion
 
@@ -138,7 +138,6 @@ namespace Model
         public DbSet<Damage> Damages { get; set; }
 
         #endregion
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

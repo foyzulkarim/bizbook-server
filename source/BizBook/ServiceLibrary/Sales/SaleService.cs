@@ -93,7 +93,7 @@ namespace ServiceLibrary.Sales
             viewModel.SaleDetails = dbContext.SaleDetails.Where(x => x.SaleId == id).Include(x => x.ProductDetail)
                 .ToList().ConvertAll(x => new SaleDetailViewModel(x)).ToList();
 
-            viewModel.Transactions = dbContext.Transactions.Where(x => x.OrderId == sale.Id).Include(x => x.AccountInfo).ToList()
+            viewModel.Transactions = dbContext.Transactions.Where(x => x.OrderId == sale.Id).Include(x => x.Wallet).ToList()
                 .ConvertAll(y => new TransactionViewModel(y)).ToList();
 
             viewModel.SaleStates = dbContext.SaleStates.Where(x => x.SaleId == id).ToList()
@@ -271,14 +271,14 @@ namespace ServiceLibrary.Sales
 
                 if (sale.Transactions != null && sale.Transactions.Count > 0)
                 {
-                    AccountInfo accountInfo = GetCashAccountInfo(sale);
-                    var paidByCashTransations = sale.Transactions.Where(x => x.AccountInfoId == accountInfo.Id).ToList();
+                    Wallet accountInfo = GetCashWallet(sale);
+                    var paidByCashTransations = sale.Transactions.Where(x => x.WalletId == accountInfo.Id).ToList();
                     if (paidByCashTransations.Count > 0)
                     {
                         sale.PaidByCashAmount = paidByCashTransations.Sum(x => x.Amount);
                     }
 
-                    var paidByOtherTransactions = sale.Transactions.Where(x => x.AccountInfoId != accountInfo.Id).ToList();
+                    var paidByOtherTransactions = sale.Transactions.Where(x => x.WalletId != accountInfo.Id).ToList();
                     if (paidByOtherTransactions.Count > 0)
                     {
                         sale.PaidByOtherAmount = paidByOtherTransactions.Sum(x => x.Amount);
@@ -428,15 +428,15 @@ namespace ServiceLibrary.Sales
             return accountHead;
         }
 
-        private AccountInfo GetCashAccountInfo(Sale sale)
+        private Wallet GetCashWallet(Sale sale)
         {
             var db = this.Repository.Db as BusinessDbContext;
-            var accountInfo = db.AccountInfos.FirstOrDefault(x => x.AccountTitle == "Cash" && x.ShopId == sale.ShopId);
+            var accountInfo = db.Wallets.FirstOrDefault(x => x.AccountTitle == "Cash" && x.ShopId == sale.ShopId);
             if (accountInfo == null)
             {
-                accountInfo = new AccountInfo() { ShopId = sale.ShopId, AccountTitle = "Cash", AccountInfoType = AccountInfoType.Cash, AccountNumber = "Cash" };
+                accountInfo = new Wallet() { ShopId = sale.ShopId, AccountTitle = "Cash", WalletType = WalletType.Cash, AccountNumber = "Cash" };
                 this.AddCommonValues(sale, accountInfo);
-                db.AccountInfos.Add(accountInfo);
+                db.Wallets.Add(accountInfo);
                 db.SaveChanges();
             }
 

@@ -295,7 +295,7 @@
     <Compile Include="Controllers\CommandControllers\Shops\CourierController.cs" />
     <Compile Include="Controllers\CommandControllers\Shops\DealerController.cs" />
     <Compile Include="Controllers\CommandControllers\Transactions\AccountHeadController.cs" />
-    <Compile Include="Controllers\CommandControllers\Transactions\AccountInfoController.cs" />
+    <Compile Include="Controllers\CommandControllers\Transactions\WalletController.cs" />
     <Compile Include="Controllers\CommandControllers\Transactions\TransactionController.cs" />
     <Compile Include="Controllers\CommandControllers\Customers\CustomerController.cs" />
     <Compile Include="Controllers\CommandControllers\Products\ProductCategoryController.cs" />
@@ -327,7 +327,7 @@
     <Compile Include="Controllers\QueryControllers\Shops\DealerQueryController.cs" />
     <Compile Include="Controllers\QueryControllers\Shops\ShopQueryController.cs" />
     <Compile Include="Controllers\QueryControllers\Transactions\AccountHeadQueryController.cs" />
-    <Compile Include="Controllers\QueryControllers\Transactions\AccountInfoQueryController.cs" />
+    <Compile Include="Controllers\QueryControllers\Transactions\WalletQueryController.cs" />
     <Compile Include="Controllers\QueryControllers\Transactions\TransactionQueryController.cs" />
     <Compile Include="Controllers\QueryControllers\Customers\CustomerQueryController.cs" />
     <Compile Include="Controllers\QueryControllers\DashboardQueryController.cs" />

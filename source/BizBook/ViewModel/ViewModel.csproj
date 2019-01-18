@@ -72,7 +72,7 @@
     <Compile Include="Shops\DealerViewModel.cs" />
     <Compile Include="Transactions\AccountHeadReportModel.cs" />
     <Compile Include="Transactions\AccountHeadViewModel.cs" />
-    <Compile Include="Transactions\AccountInfoViewModel.cs" />
+    <Compile Include="Transactions\WalletViewModel.cs" />
     <Compile Include="Transactions\TransactionReportModel.cs" />
     <Compile Include="Customers\CustomerReportModel.cs" />
     <Compile Include="Customers\CustomerViewModel.cs" />

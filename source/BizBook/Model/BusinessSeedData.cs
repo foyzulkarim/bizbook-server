@@ -65,7 +65,7 @@ namespace Model
                 CreatedBy = "foyzulkarim@gmail.com",
                 ModifiedBy = "foyzulkarim@gmail.com",
                 CreatedFrom = "Browser",
-                RegistrationDate = new DateTime(2017, 1, 1),
+                RegistrationDate = DateTime.Today.Date,
                 ExpiryDate = new DateTime(2025, 1, 1),
                 IsVerified = true,
                 TotalUsers = 1,
@@ -111,8 +111,8 @@ namespace Model
                 Modified = DateTime.Now,
                 CreatedBy = "foyzulkarim@gmail.com",
                 ModifiedBy = "foyzulkarim@gmail.com",
-                CreatedFrom = "Browser",
-                RegistrationDate = new DateTime(2016, 1, 1),
+                CreatedFrom = "System",
+                RegistrationDate = DateTime.Today.Date,
                 ExpiryDate = new DateTime(2020, 1, 1),
                 IsVerified = true,
                 IsActive = true,
@@ -146,18 +146,18 @@ namespace Model
             }
         }
 
-        public static void AddAccountInfo(BusinessDbContext context, string shopId)
+        public static void AddWallet(BusinessDbContext context, string shopId)
         {
-            bool exists = context.AccountInfos.Any(x => x.AccountTitle == "Cash" && x.ShopId == shopId);
+            bool exists = context.Wallets.Any(x => x.AccountTitle == "Cash" && x.ShopId == shopId);
             if (!exists)
             {
-                AccountInfo info = GetDefaults<AccountInfo>(shopId);
+                Wallet info = GetDefaults<Wallet>(shopId);
                 info.Id = Guid.NewGuid().ToString();
                 info.AccountTitle = "Cash";
-                info.AccountInfoType = AccountInfoType.Cash;
+                info.WalletType = WalletType.Cash;
                 info.AccountNumber = "Cash";
 
-                context.AccountInfos.Add(info);
+                context.Wallets.Add(info);
                 context.SaveChanges();
             }
         }

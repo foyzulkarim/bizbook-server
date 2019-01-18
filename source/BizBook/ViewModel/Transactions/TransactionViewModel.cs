@@ -34,10 +34,10 @@
             OrderId = x.OrderId;
             PaymentGatewayService = x.PaymentGatewayService.ToString();
             PaymentGatewayServiceName = PaymentGatewayService;
-            AccountInfoId = x.AccountInfoId;
-            if (x.AccountInfo != null)
+            WalletId = x.WalletId;
+            if (x.Wallet != null)
             {
-                AccountInfoTitle = x.AccountInfo.AccountTitle;
+                WalletTitle = x.Wallet.AccountTitle;
             }
         }
 
@@ -81,8 +81,8 @@
 
         public string AccountHeadId { get; set; }
 
-        public string AccountInfoId { get; set; }
+        public string WalletId { get; set; }
 
-        public string AccountInfoTitle { get; set; }
+        public string WalletTitle { get; set; }
     }
 }

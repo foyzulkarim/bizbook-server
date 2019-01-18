@@ -6,20 +6,20 @@ using Model.Transactions;
 
 namespace RequestModel.Transactions
 {
-    public class AccountInfoRequestModel : RequestModel<AccountInfo>
+    public class WalletRequestModel : RequestModel<Wallet>
     {
-        public AccountInfoRequestModel(string keyword, string orderBy = "Modified", string isAscending = "False") :
+        public WalletRequestModel(string keyword, string orderBy = "Modified", string isAscending = "False") :
             base(keyword, orderBy, isAscending)
         {
         }
 
-        protected override Expression<Func<AccountInfo, bool>> GetExpression()
+        protected override Expression<Func<Wallet, bool>> GetExpression()
         {
             if (!string.IsNullOrWhiteSpace(Keyword))
             {
                 ExpressionObj = x =>
                     x.AccountTitle.ToLower().Contains(Keyword) ||
-                    x.AccountInfoType.ToString().ToLower().Contains(Keyword);
+                    x.WalletType.ToString().ToLower().Contains(Keyword);
             }
 
             ExpressionObj = ExpressionObj.And(x => x.ShopId == ShopId);
@@ -27,7 +27,7 @@ namespace RequestModel.Transactions
             return ExpressionObj;
         }
 
-        public override Expression<Func<AccountInfo, DropdownViewModel>> Dropdown()
+        public override Expression<Func<Wallet, DropdownViewModel>> Dropdown()
         {
             return x => new DropdownViewModel() {Id = x.Id, Text = x.AccountTitle};
         }

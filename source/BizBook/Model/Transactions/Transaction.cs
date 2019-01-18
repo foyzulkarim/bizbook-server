@@ -50,8 +50,8 @@ namespace Model.Transactions
 
         [ForeignKey("AccountHeadId")] public virtual AccountHead AccountHead { get; set; }
 
-        [Index] public string AccountInfoId { get; set; }
+        [Index] public string WalletId { get; set; }
 
-        [ForeignKey("AccountInfoId")] public virtual AccountInfo AccountInfo { get; set; }
+        [ForeignKey("WalletId")] public virtual Wallet Wallet { get; set; }
     }
 }

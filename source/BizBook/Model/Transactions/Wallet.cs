@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Model.Transactions
 {
-    public class AccountInfo : ShopChild
+    public class Wallet : ShopChild
     {
         [Index] [Required] [MaxLength(50)] public string AccountTitle { get; set; }
 
@@ -12,6 +12,6 @@ namespace Model.Transactions
 
         [MaxLength(50)] public string BankName { get; set; }
 
-        [Index] [Required] public AccountInfoType AccountInfoType { get; set; }
+        [Index] [Required] public WalletType WalletType { get; set; }
     }
 }

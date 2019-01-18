@@ -33,7 +33,7 @@ namespace Server.Inventory.Controllers.QueryControllers.Transactions
             List<string> transactionFlowTypes = Enum.GetNames(typeof(TransactionFlowType)).ToList();
             List<string> paymentGatewayServices = Enum.GetNames(typeof(PaymentGatewayService)).ToList();
             List<string> accountTypes = Enum.GetNames(typeof (AccountHeadType)).ToList();
-            List<string> accountInfoTypes = Enum.GetNames(typeof(AccountInfoType)).ToList();
+            List<string> accountInfoTypes = Enum.GetNames(typeof(WalletType)).ToList();
 
             var dropdowns = new
             {

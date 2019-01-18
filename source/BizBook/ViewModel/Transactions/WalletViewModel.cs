@@ -3,14 +3,14 @@ using Model.Transactions;
 
 namespace ViewModel.Transactions
 {
-    public class AccountInfoViewModel : BaseViewModel<AccountInfo>
+    public class WalletViewModel : BaseViewModel<Wallet>
     {
-        public AccountInfoViewModel(AccountInfo x) : base(x)
+        public WalletViewModel(Wallet x) : base(x)
         {
             AccountTitle = x.AccountTitle;
             AccountNumber = x.AccountNumber;
             BankName = x.BankName;
-            AccountInfoType = x.AccountInfoType.ToString();
+            WalletType = x.WalletType.ToString();
             ShopId = x.ShopId;
         }
 
@@ -21,6 +21,6 @@ namespace ViewModel.Transactions
 
         public string BankName { get; set; }
 
-        public string AccountInfoType { get; set; }
+        public string WalletType { get; set; }
     }
 }
