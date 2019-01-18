@@ -15,6 +15,7 @@ namespace ViewModel.Transactions
         }
 
         public string ShopId { get; set; }
+
         public string AccountTitle { get; set; }
 
         public string AccountNumber { get; set; }
