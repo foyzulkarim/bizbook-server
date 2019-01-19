@@ -14,12 +14,12 @@ using Server.Identity.Models;
 namespace Server.Identity.Controllers.CommandControllers.System
 {
     [RoutePrefix("api/ApplicationUsers")]
-       [Authorize(Roles = "SuperAdmin")]
+    [Authorize(Roles = "SuperAdmin")]
     public class ApplicationUsersController : ApiController
     {
         public static ILogger Logger = Log.ForContext(typeof(ApplicationUsersController));
 
-        private SecurityDbContext db ;
+        private SecurityDbContext db;
 
         public ApplicationUserManager manager;
 
@@ -36,8 +36,8 @@ namespace Server.Identity.Controllers.CommandControllers.System
         [ResponseType(typeof(ApplicationUser))]
         public async Task<IHttpActionResult> GetApplicationUser(string id)
         {
-             db = Request.GetOwinContext().Get<SecurityDbContext>();
-             manager = Request.GetOwinContext().Get<ApplicationUserManager>();
+            db = Request.GetOwinContext().Get<SecurityDbContext>();
+            manager = Request.GetOwinContext().Get<ApplicationUserManager>();
             ApplicationUser applicationUser = await manager.FindByIdAsync(id);
 
             if (applicationUser == null)
@@ -111,6 +111,7 @@ namespace Server.Identity.Controllers.CommandControllers.System
             {
                 return BadRequest(ModelState);
             }
+            
             db = Request.GetOwinContext().Get<SecurityDbContext>();
             manager = Request.GetOwinContext().Get<ApplicationUserManager>();
             ApplicationUser user = manager.FindByEmail(viewModel.Email);
@@ -129,9 +130,9 @@ namespace Server.Identity.Controllers.CommandControllers.System
                 PhoneNumber = viewModel.PhoneNumber,
                 ShopId = viewModel.ShopId,
                 UserName = viewModel.Email
-
             };
-            IdentityResult result = await manager.CreateAsync(user, "Pass@123");
+
+            IdentityResult result = await manager.CreateAsync(user, "MyPass@123");
             if (result.Succeeded)
             {
                 var identityUserRole = db.ApplicationUserRoles.Add(new IdentityUserRole { RoleId = viewModel.RoleId, UserId = user.Id });

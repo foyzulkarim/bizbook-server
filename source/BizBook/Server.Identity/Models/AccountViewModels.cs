@@ -39,6 +39,7 @@ namespace Server.Identity.Models
 
         public string ProviderKey { get; set; }
     }
+
     public class AppUserViewModel
     {
         public string FirstName { get; set; }

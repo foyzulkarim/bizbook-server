@@ -48,6 +48,7 @@ namespace Model
                 "Salary",
                 "Utility",
                 "Conveyance",
+                "Goods",
                 "Other"
             };
             return names;
@@ -253,86 +254,6 @@ namespace Model
             {
                 AddWarehouse(context, shopId);
             }
-        }
-
-        public static void UpdateWarehouseRelatedData(BusinessDbContext context)
-        {
-            List<string> ids = context.Shops.Where(x => x.IsActive).Select(x => x.Id).ToList();
-            foreach (var shopId in ids)
-            {
-                var whId = context.Warehouses.First(x => x.ShopId == shopId).Id;
-                var purchases = context.Purchases.Where(x => x.ShopId == shopId && x.WarehouseId == null).ToList();
-                foreach (var item in purchases)
-                {
-                    item.WarehouseId = whId;
-                }
-
-                context.SaveChanges();
-                var purchaseDetails = context.PurchaseDetails.Where(x => x.ShopId == shopId && x.WarehouseId == null)
-                    .ToList();
-                foreach (var item in purchaseDetails)
-                {
-                    item.WarehouseId = whId;
-                }
-
-                context.SaveChanges();
-
-                var sales = context.Sales.Where(x => x.ShopId == shopId && x.WarehouseId == null).ToList();
-                foreach (var item in sales)
-                {
-                    item.WarehouseId = whId;
-                }
-
-                context.SaveChanges();
-
-                var saleDetails = context.SaleDetails.Where(x => x.ShopId == shopId && x.WarehouseId == null).ToList();
-                foreach (var item in saleDetails)
-                {
-                    item.WarehouseId = whId;
-                }
-
-                var productDetails = context.ProductDetails.Where(x => x.ShopId == shopId && x.IsActive).ToList();
-                foreach (var item in productDetails)
-                {
-                    WarehouseProduct whProduct = context.WarehouseProducts.FirstOrDefault(
-                        x => x.ShopId == shopId && x.ProductDetailId == item.Id && x.WarehouseId == whId);
-                    if (whProduct != null)
-                    {
-                        continue;
-                    }
-
-                    whProduct = new WarehouseProduct()
-                    {
-                        Id = Guid.NewGuid().ToString(),
-                        Created = DateTime.Now,
-                        Modified = DateTime.Now,
-                        ShopId = shopId,
-                        CreatedBy = "System",
-                        ModifiedBy = "System",
-                        CreatedFrom = "System",
-                        IsActive = true,
-                        ProductDetailId = item.Id,
-                        StartingInventory = item.StartingInventory,
-                        Purchased = item.Purchased,
-                        Sold = item.Sold,
-                        OnHand = item.OnHand,
-                        MinimumStockToNotify =
-                            item.MinimumStockToNotify,
-                        TransferredIn = 0,
-                        TransferredOut = 0,
-                        WarehouseId = whId
-                    };
-
-                    context.WarehouseProducts.Add(whProduct);
-                    context.SaveChanges();
-                }
-            }
-        }
-
-        public static void UpdateSaleDetailType(BusinessDbContext context)
-        {
-            int executeSqlCommand = context.Database.ExecuteSqlCommand("update SaleDetails set SaleDetailType = 1 where SaleDetailType = 0");
-            context.SaveChanges();
         }
 
         public static void AddWarehouse(BusinessDbContext db, string shopId)
