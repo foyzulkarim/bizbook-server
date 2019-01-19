@@ -20,12 +20,7 @@ A step by step series of examples that tell you how to get a development env run
 5. From above `Default project` dropdown, select `Server.Identity` project and run `Update-Database -Verbose` [Watch below video for details]
 6. From above `Default project` dropdown, select `Model` project and run `Update-Database -Verbose` [Watch below video for details]
 7. Go to sql folder of the repository and execute `001_Permission_Seed_Data_Insert.sql` and then `002_SuperAdmin_Data_Insert.sql` against your newly created `BizBookDb` database. [Watch below video for details]
-
-8. For rest of the step, please follow this video. [Check video instruction](https://youtu.be/uQzsSb2Nl-8)
-
-### Demo images
-
-![Sales list page](resources/images/bizbook-sales-cover.PNG)
+8. For rest of the step, please follow this video. ![Check video instruction](https://youtu.be/uQzsSb2Nl-8)
 
 ### Deployment
 
@@ -45,7 +40,7 @@ Currently I am not taking any external contribution. I will make it open for con
 
 ## Versioning
 
-We will use [SemVer](http://semver.org/) for versioning. 
+We will use ![SemVer](http://semver.org/) for versioning. 
 
 ## Authors
 
@@ -55,4 +50,6 @@ We will use [SemVer](http://semver.org/) for versioning.
 
 This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE.md](https://github.com/foyzulkarim/bizbook-angularjs-ts-client/blob/master/LICENSE) file for details
 
+## Sponsorship
 
+Currently I am not actively looking for a sponsorship. But if you have a big shop and want to automate it using BizBook System, I will be glad and feel proud to help you in this regard.
