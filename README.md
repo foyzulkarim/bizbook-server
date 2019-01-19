@@ -17,10 +17,10 @@ A step by step series of examples that tell you how to get a development env run
 3. Open `BizBook.sln` file using Visual Studio 2017
 4. Open Package Manager Console
 4. Run `Update-Package -Verbose` to install required dependencies.
-5. From above `Default project` dropdown, select `Server.Identity` project and run `Update-Database -Verbose` [Watch below video for details]
-6. From above `Default project` dropdown, select `Model` project and run `Update-Database -Verbose` [Watch below video for details]
-7. Go to sql folder of the repository and execute `001_Permission_Seed_Data_Insert.sql` and then `002_SuperAdmin_Data_Insert.sql` against your newly created `BizBookDb` database. [Watch below video for details]
-8. For rest of the step, please follow this video. ![Check video instruction](https://youtu.be/uQzsSb2Nl-8)
+5. From above `Default project` dropdown, select `Server.Identity` project and run `Update-Database -Verbose` [Watch video for details](https://youtu.be/uQzsSb2Nl-8)
+6. From above `Default project` dropdown, select `Model` project and run `Update-Database -Verbose` [Watch video for details](https://youtu.be/uQzsSb2Nl-8)
+7. Go to sql folder of the repository and execute `001_Permission_Seed_Data_Insert.sql` and then `002_SuperAdmin_Data_Insert.sql` against your newly created `BizBookDb` database. [Watch video for details](https://youtu.be/uQzsSb2Nl-8)
+8. For rest of the step, please follow this video. [Check video instruction](https://youtu.be/uQzsSb2Nl-8)
 
 ### Deployment
 
@@ -28,9 +28,9 @@ A step by step series of examples that tell you how to get a development env run
 
 ## Technologies used / Built with
 I have used .NET Framework 4.6.2 along with,
-1. ASP.NET Web API 
-2. Entity Framework
-3. SQL Server 2017 Express 
+* ASP.NET Web API 
+* Entity Framework
+* SQL Server 2017 Express 
 
 
 ## Contributing
@@ -40,7 +40,7 @@ Currently I am not taking any external contribution. I will make it open for con
 
 ## Versioning
 
-We will use ![SemVer](http://semver.org/) for versioning. 
+We will use [SemVer](http://semver.org/) for versioning. 
 
 ## Authors
 
