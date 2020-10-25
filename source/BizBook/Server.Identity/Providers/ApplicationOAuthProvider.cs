@@ -40,7 +40,7 @@ namespace Server.Identity.Providers
         {
 
             //Add Access-Control-Allow-Origin header as Enabling the Web Api CORS will not enable it for this provider request.
-            context.OwinContext.Request.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+             context.OwinContext.Request.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             //context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);
@@ -190,7 +190,6 @@ namespace Server.Identity.Providers
                 data.Add("ShowOrderNumberAfterSave", shop.IsShowOrderNumber.ToString());
                 data.Add("AddToCartIfResultIsOne", shop.IsAutoAddToCart.ToString());
                 data.Add("DeliveryChargeAmount", shop.DeliveryCharge.ToString(CultureInfo.InvariantCulture));
-
             }
 
             return new AuthenticationProperties(data);

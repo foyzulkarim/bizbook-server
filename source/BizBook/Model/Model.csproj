@@ -108,6 +108,10 @@
     <Compile Include="Customers\CustomerFeedback.cs" />
     <Compile Include="Customers\District.cs" />
     <Compile Include="Customers\Zone.cs" />
+    <Compile Include="Migrations\201901191332239_Init.cs" />
+    <Compile Include="Migrations\201901191332239_Init.Designer.cs">
+      <DependentUpon>201901191332239_Init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Operations\OperationLog.cs" />
     <Compile Include="Operations\OperationLogDetail.cs" />
     <Compile Include="Sales\Installment.cs" />
@@ -168,7 +172,11 @@
       <Name>CommonLibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901191332239_Init.resx">
+      <DependentUpon>201901191332239_Init.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -304,6 +304,10 @@
     <Compile Include="Hubs\ConnectionMapping.cs" />
     <Compile Include="Hubs\MyHub.cs" />
     <Compile Include="Helper\RedisConnection.cs" />
+    <Compile Include="Migrations\201901181446153_Init.cs" />
+    <Compile Include="Migrations\201901181446153_Init.Designer.cs">
+      <DependentUpon>201901181446153_Init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -342,7 +346,11 @@
     </Content>
     <Content Include="Service References\Application Insights\ConnectedService.json" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901181446153_Init.resx">
+      <DependentUpon>201901181446153_Init.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Project_Readme.html" />
